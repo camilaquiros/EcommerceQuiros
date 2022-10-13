@@ -1,0 +1,23 @@
+@import "../../Assets/mixin";
+@import "../../Assets/variables";
+@import "../../Assets/extend";
+@import "../../Assets/maps";
+
+.error{
+    @include flex(flex, wrap, row, space-between, center);
+    position: relative;
+    img{
+        width: 60%;
+    }
+}
+
+.errorText{
+    width: 40%;
+    color: $negro;
+    height: max-content;
+    h1{
+        padding-bottom: 1%;
+        font-size: 3vw;
+    }
+}
+

@@ -1,0 +1,87 @@
+@import "../../Assets/mixin";
+@import "../../Assets/variables";
+@import "../../Assets/extend";
+@import "../../Assets/maps";
+
+header {
+  @include flex(flex, wrap, null, space-between, center);
+  background-image: url(./assets/background.svg);
+  background-repeat: repeat;
+  background-size: contain;
+  background-size: 10%;
+  padding: 1% 2%;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+}
+
+.logoMenu{
+  @include flex(flex, null, row, flex-start, center);
+  width: 85vw;
+}
+
+.menu{
+  width: 80%;
+  @include flex(flex, wrap, null, flex-start, center);
+}
+
+#logo {
+  @include flex(flex, null, null, center, center);
+  text-align: map-get($textos, textAlign);
+  padding: 1%;
+  border-style: dashed;
+  border-radius: 15px;
+  background: linear-gradient(120deg, rgba(242,255,141,0.8) 12%, rgba(255,153,193,0.8) 34%, rgba(191,158,236,0.8) 68%, rgba(4,186,216,0.8) 90%);
+  backdrop-filter: blur(1px);
+  color: map-get($textos, color);
+  font-family: $serif;
+  font-weight: bolder;
+  font-size: 2em;
+  height: 100%;
+  margin-right: 2%;
+
+  &:hover {
+    background: linear-gradient(120deg, $amarillo 12%, $rosado 34%, $violeta 68%, $turquesa 90%);
+  }
+}
+
+.categoriaNavbar{
+  background-color: transparentize($blanco, 0.7);
+  font-size: 1.5em;
+  margin: 0 2%;
+}
+
+.categoriaActivaNavbar {
+  background-color: $turquesa;
+  color: $amarillo;
+  font-weight: bold;
+  font-size: 1.5em;
+  padding: 0.5% 1%;
+  border-radius: 10px;
+  border: 3px dashed $negro;
+}
+
+.iconos {
+  @include flex(inline-flex, wrap, null, space-between,center);
+  align-self: flex-start;
+  justify-self: flex-end;
+  width: 5%;
+  background-color: $turquesa;
+  color: $amarillo;
+
+  padding: 0.5% 1%;
+  border-radius: 10px;
+  border: 3px dashed $negro;
+
+  svg{
+    height: 2vw;
+  }
+
+  p{
+    font-size: 2.5vw;
+    vertical-align: middle;
+    font-family: $serif;
+    font-weight: bold;
+  }
+}
+

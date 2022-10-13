@@ -1,0 +1,58 @@
+@import "../../Assets/mixin";
+@import "../../Assets/variables";
+@import "../../Assets/extend";
+@import "../../Assets/maps";
+
+.itemListContainer{
+    background-color: #BF9EEC;
+    padding: 3% 0;
+    min-height: 80vh;
+
+    h1{
+        text-align: center;
+        padding-bottom: 1%;
+        color: $amarillo;
+    }
+}
+
+.cardsContainer{
+    @include flex(flex, wrap, null, space-around, center);
+}
+
+.card{
+    width: 20%;
+    margin: 1%;
+    border: 3px dashed $negro;
+    border-radius: 20px;
+
+    :hover {
+        background-color: $turquesa;
+    }
+}
+
+.cardInterior{
+    text-align: center;
+    border-radius: 20px;
+    margin: 2%;
+    background-color: $rosado;
+
+    img{
+        width: 100%;
+        border-radius: 15px 15px 0 0;
+    }
+
+    p{
+        color: $amarillo;
+        padding-top: 5%;
+        font-size: 1.5vw;
+    }
+}
+
+.cardNombre{
+    font-weight: bold;
+}
+
+.cardPrecio{
+    padding-bottom: 8%;
+    font-family: $serif;
+}

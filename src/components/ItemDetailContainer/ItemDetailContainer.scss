@@ -1,0 +1,114 @@
+@import "../../Assets/mixin";
+@import "../../Assets/variables";
+@import "../../Assets/extend";
+@import "../../Assets/maps";
+
+.cardContainer {
+    @include flex(flex, wrap, null, center, flex-start);
+    background-color: $violeta;
+    min-height: 90vh;
+}
+
+.cardDetail {
+    width: 70%;
+    margin-top: 3%;
+    border: 3px dashed $negro;
+    border-radius: 20px;
+}
+
+.detailInterior{
+    display: grid;
+    grid-template-columns: repeat(2, 6fr);
+    grid-template-rows: 1fr 2fr 0.5fr 1.5fr;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+
+    img{
+        grid-row-start: 1;
+        grid-row-end: 6;
+        grid-column: 1;
+        border-radius: 20px 0 0 20px;
+    }
+}
+
+.cardNombreDetail {
+    grid-auto-flow: column;
+    grid-column: 2;
+    font-size: 4vw !important;
+    font-weight: bold;
+
+}
+
+.cardDescriptionDetail{
+    grid-auto-flow: column;
+    grid-column: 2;
+    font-size: 1.5vw !important;
+    padding: 0 5% !important;
+
+}
+
+.cardPrecioDetail{
+    grid-auto-flow: column;
+    grid-column: 2;
+    font-family: $serif;
+    font-size: 2vw !important;
+    padding: 0 !important;
+}
+
+.counter {
+    @include flex(flex, null, column, center, center);
+    grid-column: 2;
+    grid-auto-flow: column;
+    align-self: flex-start;
+    margin-top: 3%;
+}
+
+.controls {
+    @include flex(flex, null, null, space-around, center);
+    width: 100%;
+    background-color: $blanco;
+    color: $negro;
+    border-radius: 10px;
+    border: 3px dashed $negro;
+    z-index: 3;
+}
+
+.buttonQuantity{
+    font-size: 2.5vw;
+    font-family: $serif;
+    padding: 0 5%;
+    font-weight: bold;
+    background-color: $blanco;
+    color: $negro;
+    border: none;
+}
+
+.numberQuantity{
+    font-size: 2.5vw;
+    font-family: $serif;
+}
+
+.buttonCart{
+    margin-top: 10%;
+    width: 120%;
+
+    button{
+        border: none;
+        border: 3px dashed $negro;
+        padding: 3% 5%;
+        border-radius: 10px;
+    }
+}
+
+.abled{
+    color: $amarillo;
+    background-color: $turquesa;
+    font-size: 1.5vw;
+}
+
+.disabled{
+    background-color: rgb(158, 153, 153);
+    font-size: 2vw;
+    color: $blanco;
+}
