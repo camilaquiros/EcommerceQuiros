@@ -1,34 +1,29 @@
-import {useState, useEffect} from 'react'
+import {useEffect} from 'react'
 import './ItemListContainer.scss'
 import ItemsList from '../ItemsList/ItemsList';
 import { useParams } from 'react-router-dom';
 import Spinner from '../Spinner/Spinner';
-import { getDocs, collection, query, where } from 'firebase/firestore';
-import { db } from '../../services/firebase';
+import { getProducts } from '../../services/firebase/firestore/products';
+import { useAsync } from '../../hooks/useAsync';
+
 
 const ItemListContainer = () => {
-    const [products, setProducts] = useState([])
-    const [loading, setLoading] = useState(true)
-
     const{categoryId} = useParams()
 
+    const getProductsWithCategory = () => getProducts(categoryId)
+
+    const {data: products, error, loading} = useAsync(getProductsWithCategory, [categoryId])
+
     useEffect(() => {
-        setLoading(true);
-
-        const collectionRef = categoryId
-        ? query(collection(db, 'products'), where('categoria', '==', categoryId))
-        :collection(db, 'products')
-
-        getDocs(collectionRef).then(response => {
-            const productsAdapted = response.docs.map(doc => {
-                const data = doc.data()
-                return {id: doc.id, ...data}
-            })
-            setProducts(productsAdapted)
-        }).finally(() => {
-            setLoading(false);
-        })
+        document.title = categoryId? `${categoryId}`:'Productos'
     }, [categoryId])
+
+    if(error) {
+        // return{
+        //     // Toastify
+        // }
+        console.log(error)
+    }
 
     return (
         <div>

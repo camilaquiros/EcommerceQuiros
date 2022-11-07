@@ -2,19 +2,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 import { useContext } from 'react'
 import { CartContext } from '../../context/CartContext'
-
+import { useNavigate } from 'react-router-dom'
 
 const CartWidget = () => {
 
-    const { getQuantity } = useContext(CartContext)
+    const { totalQuantity} = useContext(CartContext) 
 
-    const quantity = getQuantity()
+    const navigate = useNavigate()
+
 
     return (
-        <div className="iconos">
+        <button className="iconos" onClick={() => navigate('/cart')}>
             <FontAwesomeIcon icon={faCartShopping} />
-            <p>{quantity}</p>
-        </div>
+            <p>{totalQuantity}</p>
+        </button>
 
     )
 }

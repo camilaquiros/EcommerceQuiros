@@ -1,6 +1,12 @@
 import './Error404.scss'
+import { useEffect } from 'react'
 
 const Error404 = () => {
+
+    useEffect(() => {
+        document.title = '404'
+    }, [])
+
     return (
         <div className='error'>
             <img src='./images/404.jpeg' alt='Error 404'></img>

@@ -1,35 +1,35 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import './ItemDetailContainer.scss';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import {useParams} from 'react-router-dom'
 import Spinner from '../Spinner/Spinner';
-import { getDoc, doc } from 'firebase/firestore';
-import { db } from '../../services/firebase';
+import { getProduct } from '../../services/firebase/firestore/products';
+import { useAsync } from '../../hooks/useAsync';
 
 const ItemDetailContainer = () => {
-    const [product , setProduct] = useState([])
-    const [loading, setLoading] = useState(true)
-
     const {productId} = useParams()
 
+    const getProductDetail = () => getProduct(productId)
+
+    const {data: product, error, loading} = useAsync(getProductDetail, [productId])
+
     useEffect(() => {
-        const docRef = doc(db, 'products', productId)
-        getDoc(docRef).then(response => {
-            const data = response.data()
-            const productAdapted = {id: response.id, ...data}
-            setProduct(productAdapted);
-        }).finally(() => {
-            setLoading(false);
-        })
-    }, [productId])
+        document.title = loading? 'Cargando':`${product.nombre}`
+    }, [loading, product.nombre])
+
+    if(error) {
+        // return{
+        //     // Toastify
+        // }
+        console.log(error)
+    }
 
     return (
         <div className='cardContainer'>
-            {loading? (<Spinner/>) : (<ItemDetail {...product}/>)}
+            {loading? (<Spinner/>) : (<ItemDetail key= {product.id} {...product}/>)}
         </div>
-        
-        
     )
+
 }
 
 export default ItemDetailContainer;

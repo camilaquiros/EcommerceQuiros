@@ -65,7 +65,7 @@ header {
   @include flex(inline-flex, wrap, null, space-between,center);
   align-self: flex-start;
   justify-self: flex-end;
-  width: 5%;
+  width: 7vw;
   background-color: $turquesa;
   color: $amarillo;
 
