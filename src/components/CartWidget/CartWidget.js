@@ -12,7 +12,7 @@ const CartWidget = () => {
 
 
     return (
-        <button className="iconos" onClick={() => navigate('/cart')}>
+        <button className="iconos" onClick={() => navigate('/cart')} style={totalQuantity === 0 ? {visibility: 'hidden'} : {visibility: 'visible'}}>
             <FontAwesomeIcon icon={faCartShopping} />
             <p>{totalQuantity}</p>
         </button>

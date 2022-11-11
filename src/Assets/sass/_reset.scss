@@ -1,0 +1,112 @@
+/* RESETEO */
+
+* {
+  margin: 0%;
+  padding: 0%;
+  scrollbar-width: thin;
+  scrollbar-color: $turquesa $amarillo;
+
+  &::selection {
+    background-color: $turquesa;
+    color: $amarillo;
+  }
+
+  &::-moz-selection {
+    background-color: $turquesa;
+    color: $amarillo;
+  }
+
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: $amarillo;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: $turquesa;
+    border-radius: 20px;
+  }
+}
+
+html {
+  width: 100%;
+  // overflow-x: hidden;
+}
+
+body {
+  font-family: $sansserif;
+  @include flex(flex, null, column, space-between, null);
+  min-height: 100vh;
+  height: 100%;
+  padding-right: 0 !important;
+  // overflow-x: hidden;
+
+  
+
+  cursor:url("https://firebasestorage.googleapis.com/v0/b/ecommercequiros.appspot.com/o/cursor.png?alt=media&token=adf9173d-2895-4bf7-b1e5-4a8649ab3ba1"), auto;
+
+  &:active{
+    cursor: url("https://firebasestorage.googleapis.com/v0/b/ecommercequiros.appspot.com/o/cursorHover.png?alt=media&token=115356f1-8605-48cb-8473-9ec8528ceaa0"), auto;
+  }
+}
+
+a {
+  text-decoration: map-get($textos, textDecoration);
+  color: map-get($textos, color);
+  &:hover{
+    color: map-get($textos, color);
+  }
+}
+
+li {
+  list-style-type: none;
+}
+
+a, button{
+  cursor: url("https://firebasestorage.googleapis.com/v0/b/ecommercequiros.appspot.com/o/cursorHover.png?alt=media&token=115356f1-8605-48cb-8473-9ec8528ceaa0"), auto !important;
+  &:hover{
+  cursor: url("https://firebasestorage.googleapis.com/v0/b/ecommercequiros.appspot.com/o/cursorHover.png?alt=media&token=115356f1-8605-48cb-8473-9ec8528ceaa0"), auto;
+  }
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  appearance: none;
+  -moz-appearance: textfield;
+}
+
+.swalSuccess{
+  justify-items: center;
+  background-color: $turquesa !important;
+  color: $amarillo !important;
+  font-size: 1.3em !important;
+  border: 3px dashed $negro !important;
+  button{
+    background-color: $rosado !important;
+  }
+}
+
+.swal2-html-container {
+  text-align: center !important;
+}
+
+.swalError{
+  justify-items: center;
+  background-color: rgba(227, 61, 61, 0.845) !important;
+  color: $blanco !important;
+  font-size: 1.3em !important;
+  border: 3px dashed $negro !important;
+  button{
+    background-color: $negro !important;
+  }
+}

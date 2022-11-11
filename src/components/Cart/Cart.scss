@@ -1,0 +1,86 @@
+@import "../../Assets/sass/mixin";
+@import "../../Assets/sass/variables";
+@import "../../Assets/sass/extend";
+@import "../../Assets/sass/maps";
+
+.cartContainer {
+    background-color: $violeta;
+    padding: 3%;
+    @include flex(flex, wrap, column, flex-start, center);
+    h3{
+        width: 100%;
+        text-align: center;
+        font-size: 2vw;
+        margin: 2% 0;
+    }
+    min-height: 80vh;
+}
+
+.cartTitle {
+    text-align: center;
+    padding-bottom: 2%;
+    color: $amarillo;
+    width: 100%;
+    font-size: 3vw;
+}
+
+.cartItemsContainer{
+    @include flex(flex, wrap, null, center, center);
+    width: 70%;
+}
+
+.cartItem{
+    @include flex(flex, wrap, row, space-between, center);
+    background-color: $turquesa;
+    border: 3px dashed $negro;
+    margin-bottom: 2%;
+    border-radius: 20px;
+    font-weight: bold;
+    color: $negro;
+    font-size: 1.2vw;
+    width: 100%;
+}
+
+.cartImg{
+    width: 15%;
+    @include flex(flex, wrap, null, center, center);
+    img, a{
+        width: 100%;
+        border-radius: 18px 0 0 18px;
+    }
+}
+
+.buttonCartItem {
+    padding-right: 5%;
+    button{
+        font-size: 1.5vw;
+        background-color: transparent;
+        border: none;
+        color: $amarillo;
+
+    }
+}
+
+.cartButtons{
+    width: 25vw;
+    @include flex(flex, wrap, null, space-between, center);
+}
+
+.buttonClearCart, .buttonCheckout{
+    padding: 3% 5%;
+    font-size: 1.2vw;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+.buttonClearCart{
+    color: $blanco;
+    background-color: rgb(124, 121, 121);
+    border: none;
+}
+
+.buttonCheckout{
+    background-color: $rosado;
+    color: $amarillo;
+    border: 3px dashed $negro;
+}

@@ -5,6 +5,8 @@ import {useParams} from 'react-router-dom'
 import Spinner from '../Spinner/Spinner';
 import { getProduct } from '../../services/firebase/firestore/products';
 import { useAsync } from '../../hooks/useAsync';
+import { SwalError } from '../../services/SweetAlert/SwalError';
+
 
 const ItemDetailContainer = () => {
     const {productId} = useParams()
@@ -18,10 +20,7 @@ const ItemDetailContainer = () => {
     }, [loading, product.nombre])
 
     if(error) {
-        // return{
-        //     // Toastify
-        // }
-        console.log(error)
+        <SwalError />
     }
 
     return (

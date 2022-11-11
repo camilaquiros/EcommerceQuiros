@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import { ToastContainer, toast } from 'react-toastify';
+import Swal from 'sweetalert2'
 import 'react-toastify/dist/ReactToastify.css';
 
 const ItemCount = ({stock, initial = 1, onAdd})=> {
@@ -29,21 +29,18 @@ const ItemCount = ({stock, initial = 1, onAdd})=> {
                 <div className="buttonCart">
                     <button className={stock === 0? 'disabled': 'abled'} onClick={event => {
                         onAdd(quantity);
-                        toast.success("Producto agregado al carrito");
+                        Swal.fire({
+                            title: '¡Producto agregado al carrito!',
+                            toast: true,
+                            position: 'top',
+                            showConfirmButton: false,
+                            timer: 2000,
+                            timerProgressBar:true,
+                            width: '25vw',
+                            padding: '2%',
+                            customClass: 'swalSuccess',
+                        })
                         }} disabled={stock === 0? true: false}>{stock === 0? 'Sin stock': 'Agregar al carrito'} </button>
-                    <ToastContainer
-                    position="top-center"
-                    autoClose={1500}
-                    hideProgressBar
-                    newestOnTop={false}
-                    closeOnClick
-                    rtl={false}
-                    pauseOnFocusLoss
-                    draggable
-                    pauseOnHover
-                    theme="colored"
-                    closeButton={false} 
-                    />
                 </div>
         </div>
     )

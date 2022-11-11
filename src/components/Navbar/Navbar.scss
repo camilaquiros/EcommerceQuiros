@@ -1,7 +1,7 @@
-@import "../../Assets/mixin";
-@import "../../Assets/variables";
-@import "../../Assets/extend";
-@import "../../Assets/maps";
+@import "../../Assets/sass/mixin";
+@import "../../Assets/sass/variables";
+@import "../../Assets/sass/extend";
+@import "../../Assets/sass/maps";
 
 header {
   @include flex(flex, wrap, null, space-between, center);
@@ -65,7 +65,7 @@ header {
   @include flex(inline-flex, wrap, null, space-between,center);
   align-self: flex-start;
   justify-self: flex-end;
-  width: 7vw;
+  width: 8vw;
   background-color: $turquesa;
   color: $amarillo;
 

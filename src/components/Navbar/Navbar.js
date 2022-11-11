@@ -36,13 +36,6 @@ const Navbar = () => {
                     {categories.map(cat => (
                         <NavLink key={cat.id} to={`/category/${cat.slug}`} className={({isActive}) => isActive? 'categoriaActivaNavbar' : 'categoriaNavbar'}>{cat.label}</NavLink>
                     ))}
-
-                    {/* <NavLink to={'/category/Bases'} className={({isActive}) => isActive? 'categoriaActivaNavbar' : 'categoriaNavbar'}>Bases</NavLink>
-                    <NavLink to={'/category/Labiales'} className={({isActive}) => isActive? 'categoriaActivaNavbar' : 'categoriaNavbar'}>Labiales</NavLink>
-                    <NavLink to={'/category/Mascaras'} className={({isActive}) => isActive? 'categoriaActivaNavbar' : 'categoriaNavbar'}>Mascaras</NavLink>
-                    <NavLink to={'/category/Paletas'} className={({isActive}) => isActive? 'categoriaActivaNavbar' : 'categoriaNavbar'}>Paletas</NavLink>
-                    <NavLink to={'/category/Brochas'} className={({isActive}) => isActive? 'categoriaActivaNavbar' : 'categoriaNavbar'}>Brochas</NavLink>
-                    <NavLink to={'/category/Esmaltes'} className={({isActive}) => isActive? 'categoriaActivaNavbar' : 'categoriaNavbar'}>Esmaltes</NavLink> */}
                 </div>
             </div>
             <CartWidget />

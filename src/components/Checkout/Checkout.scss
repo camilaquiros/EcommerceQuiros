@@ -1,0 +1,61 @@
+@import "../../Assets/sass/mixin";
+@import "../../Assets/sass/variables";
+@import "../../Assets/sass/extend";
+@import "../../Assets/sass/maps";
+
+.checkoutContainer{
+    background-color: $violeta;
+    min-height: 80vh;
+    @include flex(flex, null, column, flex-start, center);
+    padding: 3%;
+    h1{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 3%;
+        font-size: 2.5vw;
+        color: $amarillo;
+    }
+}
+
+.formContainer{
+    @include flex(flex, wrap, column, center, center);
+    width: 30%;
+}
+
+.formCheckout{
+    label{
+        width: 100%;
+        color: $amarillo;
+        font-weight: bold;
+        font-size: 1.5vw;
+    }
+    input{
+        width: 100%;
+        font-size: 1.5vw;
+        margin: 1.5% 0 3% 0;
+    }
+}
+
+.buttonSubmit, .buttonOrder{
+    background-color: $turquesa;
+    color: $amarillo;
+    border: 3px dashed $negro;
+    border-radius: 20px;
+    padding: 1%;
+    font-weight: bold;
+    font-size: 1.8vw !important;
+    width: 100%;
+    margin-top: 3%;
+    &:hover{
+        cursor: url("https://firebasestorage.googleapis.com/v0/b/ecommercequiros.appspot.com/o/cursorHover.png?alt=media&token=115356f1-8605-48cb-8473-9ec8528ceaa0"), auto;
+    }
+    &:disabled{
+        color: $blanco;
+        background-color: rgb(158, 153, 153);
+    }
+}
+
+.buttonOrder{
+    padding: 0.3%;
+    width: 30%;
+}
