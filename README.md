@@ -29,4 +29,4 @@ Para conectar el proyecto con firestore, completa los datos siguiendo el ejemplo
 ### ❤Agradecimiento❤ 
 Agradezco a Constanza Bravi porque le afane una parte del README
 
-# #Para todo el resto Google.
+# Para todo el resto Google.
