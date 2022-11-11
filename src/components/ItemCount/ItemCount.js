@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
 import Swal from 'sweetalert2'
-import 'react-toastify/dist/ReactToastify.css';
 
 const ItemCount = ({stock, initial = 1, onAdd})=> {
 
