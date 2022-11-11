@@ -2,7 +2,7 @@
 
 Proyecto en desarrollo, entrega trabajo final del curso de React de Coderhouse.
 
-![ Alt text]((https://firebasestorage.googleapis.com/v0/b/ecommercequiros.appspot.com/o/EntregaReactQuiros2.gif?alt=media&token=174d1ff8-d3b4-4e6a-9ba1-1e678863e7f0)
+![ Alt text](https://firebasestorage.googleapis.com/v0/b/ecommercequiros.appspot.com/o/EntregaReactQuiros2.gif?alt=media&token=174d1ff8-d3b4-4e6a-9ba1-1e678863e7f0)
 
 ![ Alt text](https://firebasestorage.googleapis.com/v0/b/ecommercequiros.appspot.com/o/EntregaReactQuiros.gif?alt=media&token=d66fc018-2bae-4294-a0a4-426c2b7de245)
 
